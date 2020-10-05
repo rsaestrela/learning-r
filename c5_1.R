@@ -157,3 +157,31 @@ class(a_data_frame[2:3, -3]) # "data.frame"
 class(a_data_frame[2:3, 1]) # "factor"
 
 a_data_frame$x[2:3]
+
+a_data_frame[[1]][2:3]
+
+a_data_frame[["x"]][2:3]
+
+a_data_frame[a_data_frame$y > 0 | a_data_frame$y, "x"]
+
+subset(a_data_frame, y > 0, x)
+
+t(a_data_frame)
+
+another_data_frame <- data.frame(
+  z = rlnorm(5),
+  y = sample(5),
+  x = letters[3:7]
+)
+
+rbind(a_data_frame, another_data_frame)
+
+cbind(a_data_frame, another_data_frame)
+
+merge(a_data_frame, another_data_frame, by = "x")
+
+merge(a_data_frame, another_data_frame, by = "x", all = TRUE)
+
+colSums(a_data_frame[, 2:3])
+
+colMeans(a_data_frame[, 2:3])
